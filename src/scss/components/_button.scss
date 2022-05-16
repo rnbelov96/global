@@ -1,7 +1,7 @@
 .button {
   @include reset-btn;
-  font-size: 25px;
-  line-height: 32px;
+  font-size: 14px;
+  line-height: 17px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -11,26 +11,25 @@
   text-transform: uppercase;
   color: white;
   font-weight: 700;
-  background: linear-gradient(180deg, #ffa665 0%, #fc4f19 100%);
-  box-shadow: 0px 6px 0px #cb3300;
-  border-radius: 8px;
-  width: 100%;
-  min-height: 92px;
+  background: linear-gradient(93.3deg, #ff6b00 0%, #ff008a 100%);
+  box-shadow: 0px 3px 0px #8e0000;
+  border-radius: 5px;
+  @include max-width(250px);
+  min-height: 57px;
   overflow: hidden;
   position: relative;
 
-  @media (max-width: 650px) {
-    font-size: 16px;
-  }
-
   &:hover {
-    background: #fc4f19;
+    background: linear-gradient(93.3deg, #ff0000 0%, #da0076 100%);
   }
 
   &:active {
-    background: #cb3300;
-    box-shadow: none;
-    top: 6px;
+    background: linear-gradient(
+      93.3deg,
+      rgba(255, 61, 0, 0.74) 0%,
+      rgba(255, 0, 138, 0.77) 100%
+    );
+    box-shadow: 0px 3px 0px #8E0000;
   }
 
   &::after {

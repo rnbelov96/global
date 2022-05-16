@@ -17,21 +17,120 @@
     <script src="https://api-maps.yandex.ru/2.0-stable/?load=package.map&lang=ru-RU"></script>
   </head>
   <body>
-    <main>
-      <section class="slider">
-        <div class="slider__wrapper">
-          <div class="slider__img-box">
-            <div class="slider__img-item"></div>
-            <div class="slider__img-item"></div>
-            <div class="slider__img-item"></div>
-            <div class="slider__img-item"></div>
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <img
+            src="./img/icons/logo.png"
+            alt="Логотип компании"
+            width="224"
+            height="60"
+            class="header__logo"
+          />
+          <p class="header__text">
+            Производитель и поставщик специализированной одежды, рабочей обуви и
+            средств индивидуальной защиты
+          </p>
+          <div class="header__contact-box">
+            <a href="tel:+79062370572" class="header__phone"
+              >+7 (906) 237-05-72</a
+            ><button class="header__callback js-callback">
+              заказать звонок
+            </button>
           </div>
         </div>
-        <div class="slider__btns-box">
-          <button class="slider__btn-prev"></button
-          ><button class="slider__btn-next"></button>
+      </div>
+    </header>
+    <main>
+      <section class="desc">
+        <div class="container">
+          <h1 class="desc__title">
+            Франшиза офис-магазина спецодежды «ГЛОБАЛ-ПАРТНЕРС»: <br />
+            <span>
+              от 120 до 1200 потенциальных компаний-клиентов и прибыль от
+              350&nbsp;000&nbsp;₽ в месяц
+            </span>
+          </h1>
+          <p class="desc__text">
+            Производство спецодежды и обуви на современном оборудовании из
+            Японии, Германии и Китая. Объём&nbsp;выпускаемой продукции <br />
+            <b>от 100 000 до 150 000 изделий в год</b>
+          </p>
+          <ul class="desc__list">
+            <li class="desc__item">
+              <b>Продажа как серийной продукции,</b> так и индивидуальной в
+              фирменном стиле клиентов
+            </li>
+            <li class="desc__item">
+              <b>Предоставим защиту склада</b> и&nbsp;контроль ассортимента для
+              ускорения товарооборота
+            </li>
+            <li class="desc__item">
+              <b>Поставка продукции</b> <br />
+              с&nbsp;центрального склада с дополнительным дисконтом 10%
+            </li>
+          </ul>
+          <button class="button desc__btn js-present">
+            ПОЛУЧИТЬ ПРЕЗЕНТАЦИЮ
+          </button>
+          <form class="line-form desc__form">
+            <h3 class="line-form__title">
+              Получите презентацию с бизнес-планом франшизы
+            </h3>
+            <div class="line-form__content">
+              <div class="line-form__input-container">
+                <div class="line-form__input-box">
+                  <label for="lfpd" class="visually-hidden"
+                    >Введите номер телефона</label
+                  >
+                  <input
+                    type="tel"
+                    placeholder="+7 (___) ___ ____"
+                    name="phone"
+                    data-type="phone"
+                    class="line-form__input"
+                    id="lfpd"
+                  />
+                </div>
+                <div class="line-form__input-box">
+                  <label for="lfed" class="visually-hidden"
+                    >Введите email</label
+                  >
+                  <input
+                    type="email"
+                    placeholder="bestpartner@домен"
+                    name="email"
+                    data-type="email"
+                    class="line-form__input"
+                    id="lfed"
+                  />
+                </div>
+                <div class="line-form__input-box">
+                  <label for="lfnd" class="visually-hidden">Введите имя</label>
+                  <input
+                    type="text"
+                    placeholder="Денис Шабаев"
+                    name="name"
+                    data-type="name"
+                    class="line-form__input"
+                    id="lfnd"
+                  />
+                </div>
+              </div>
+              <button type="submit" class="button button_file button_line-form">
+                ПОЛУЧИТЬ ПРЕЗЕНТАЦИЮ
+              </button>
+            </div>
+            <p class="line-form__text">
+              <span>Я</span> подтверждаю, что ознакомлен, и даю согласие на
+              обработку персональных данных на условиях и для целей,
+              определяемых
+              <button type="button" class="js-policy">
+                Политикой конфиденциальности.
+              </button>
+            </p>
+          </form>
         </div>
-        <div class="slider__nav-box"></div>
       </section>
     </main>
 
@@ -74,7 +173,8 @@
           <li class="priv-policy__item">
             2. Настоящая политика Оператора в отношении обработки персональных
             данных (далее – Политика) применяется ко всей информации, которую
-            Оператор может получить о посетителях веб-сайта компании «Название Компании».
+            Оператор может получить о посетителях веб-сайта компании «Название
+            Компании».
           </li>
         </ol>
 
@@ -200,9 +300,8 @@
             новых продуктах и услугах, специальных предложениях и различных
             событиях. Пользователь всегда может отказаться от получения
             информационных сообщений, направив Оператору письмо на адрес
-            электронной почты с доменом email@mail.ru с пометкой «Отказ
-            от уведомлений о новых продуктах и услугах и специальных
-            предложениях».
+            электронной почты с доменом email@mail.ru с пометкой «Отказ от
+            уведомлений о новых продуктах и услугах и специальных предложениях».
           </li>
           <li class="priv-policy__item">
             3. Обезличенные данные Пользователей, собираемые с помощью сервисов
