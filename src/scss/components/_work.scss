@@ -35,6 +35,18 @@
   @include tablet-mb;
   @include mobile-mb;
 
+  @media (max-width: 920px) {
+    padding-bottom: 0;
+    padding-top: 30px;
+    margin-right: auto;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   & > * + * {
     margin-top: 23.4px;
   }
@@ -48,6 +60,19 @@
     top: 0;
     right: 100%;
     position: absolute;
+
+    @media (max-width: 920px) {
+      position: relative;
+      right: 0;
+      width: calc(100% + 60px);
+      display: block;
+      @include x-align;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 650px) {
+      width: calc(100% + 30px);
+    }
   }
 }
 
@@ -68,12 +93,17 @@
   font-weight: bold;
   line-height: 1.8;
   z-index: 2;
+
   span {
     background-color: #003082;
     padding-bottom: 3px;
     padding-top: 3px;
     padding-left: 2px;
     padding-right: 2px;
+  }
+
+  @media (max-width: 650px) {
+    padding-left: 80px;
   }
 
   &::after {
@@ -83,6 +113,10 @@
     left: 0;
     content: url('/src/img/work-title-bg.png');
     pointer-events: none;
+
+    @media (max-width: 650px) {
+      left: -150px;
+    }
   }
 
   &::before {
@@ -94,6 +128,11 @@
     position: absolute;
     left: 50px;
     top: 0;
+
+    @media (max-width: 650px) {
+      top: 10px;
+      left: 10px;
+    }
   }
 }
 
@@ -118,6 +157,11 @@
   @include max-width(368px);
   transition: height 0.5s;
 
+  &_opened {
+    padding-bottom: 19px !important;
+    height: auto !important;
+  }
+
   &::before {
     font-weight: 700;
     font-size: 36px;
@@ -133,6 +177,17 @@
 
   &:nth-child(1) {
     height: 392px;
+    position: relative;
+    top: 40px;
+    padding-bottom: 0;
+
+    @media (max-width: 1150px) {
+      top: 0;
+    }
+
+    @media (max-width: 650px) {
+      height: 338px;
+    }
 
     &::before {
       content: 'B2G';
@@ -149,6 +204,13 @@
   }
 
   &:nth-child(2) {
+    position: relative;
+    top: 13px;
+
+    @media (max-width: 1150px) {
+      top: 0;
+    }
+
     &::before {
       content: 'B2C';
     }
@@ -156,6 +218,11 @@
 
   &:nth-child(3) {
     height: 431.44px;
+    padding-bottom: 0;
+
+    @media (max-width: 650px) {
+      height: 376px;
+    }
 
     &::before {
       content: 'B2G';
@@ -171,7 +238,6 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       text-fill-color: transparent;
-      padding-bottom: 0;
     }
   }
 }
@@ -179,6 +245,14 @@
 .work__item-text {
   font-size: 18px;
   margin-bottom: 0;
+
+  &_opened {
+    background: initial !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
+    text-fill-color: initial !important;
+  }
 }
 
 .work__more-btn {
@@ -226,6 +300,11 @@
   @include x-align;
   display: block;
   margin-bottom: 27px;
+
+  @media (max-width: 650px) {
+    width: calc(100% + 40px);
+    height: auto;
+  }
 }
 
 .work__item-title {

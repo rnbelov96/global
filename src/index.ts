@@ -1,4 +1,5 @@
 import './scss/style.scss';
+import './ts/dropdown';
 // import './ts/modals';
 // import './ts/slider';
 // import './ts/calc';
