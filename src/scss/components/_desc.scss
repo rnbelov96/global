@@ -1,6 +1,7 @@
 .desc {
   min-height: 875px;
   @include bg;
+  background-color: #3498db;
   background-image: url('/src/img/bgs/desc-bg.jpg');
   padding-top: 40px;
   padding-bottom: 80px;
