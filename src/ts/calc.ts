@@ -1,94 +1,145 @@
 /* eslint-disable no-param-reassign */
 export {};
 
-const leftColor = '#FADE40';
-const rightColor = '#ffffff';
+enum Tab {
+  CLIENT,
+  STOCK,
+}
 
-const rangeElList = document.querySelectorAll('.js-range');
+const rangeElList = document.querySelectorAll('.calc__input');
 
-const rentRange = document.querySelector('.js-rent-range') as HTMLInputElement;
-const trainingRange = document.querySelector(
-  '.js-training-range',
+const b2gRange = document.querySelector('.js-b2g-range') as HTMLInputElement;
+const b2bRange = document.querySelector('.js-b2b-range') as HTMLInputElement;
+const b2cRange = document.querySelector('.js-b2c-range') as HTMLInputElement;
+const clothesRange = document.querySelector(
+  '.js-clothes-range',
 ) as HTMLInputElement;
-const roomRange = document.querySelector('.js-room-range') as HTMLInputElement;
+const shoesRange = document.querySelector(
+  '.js-shoes-range',
+) as HTMLInputElement;
+const protectRange = document.querySelector(
+  '.js-protect-range',
+) as HTMLInputElement;
 
-const resultLabelEl = document.querySelector(
-  '.js-calc-result',
+let b2gRangeResult: number;
+let b2bRangeResult: number;
+let b2cRangeResult: number;
+let clothesRangeResult: number;
+let shoesRangeResult: number;
+let protectRangeResult: number;
+let clientResult: number;
+let stockResult: number;
+
+const b2gRangeResultLabelEl = document.querySelector(
+  '.js-b2g-result',
+) as HTMLSpanElement;
+const b2bRangeResultLabelEl = document.querySelector(
+  '.js-b2b-result',
+) as HTMLSpanElement;
+const b2cRangeResultLabelEl = document.querySelector(
+  '.js-b2c-result',
+) as HTMLSpanElement;
+const clothesRangeResultLabelEl = document.querySelector(
+  '.js-clothes-result',
+) as HTMLSpanElement;
+const shoesRangeResultLabelEl = document.querySelector(
+  '.js-shoes-result',
+) as HTMLSpanElement;
+const protectRangeResultLabelEl = document.querySelector(
+  '.js-protect-result',
 ) as HTMLSpanElement;
 
-let result: number;
+const tabBoxEl = document.querySelector('.calc__tab-box') as HTMLDivElement;
+const clientTabEl = document.querySelector('.js-client-tab');
+const stockTabEl = document.querySelector('.js-stock-tab');
+let currentTab = Tab.CLIENT;
 
-let personCurrentStep = 2;
-let adultsCurrentStep = 2;
-let kidsCurrentStep = 2;
+const clientBoxEl = document.querySelector('.js-client-box') as HTMLDivElement;
+const stockBoxEl = document.querySelector('.js-stock-box') as HTMLDivElement;
 
+const phoneResultLabelEl = document.querySelector(
+  '.js-phone-result',
+) as HTMLSpanElement;
+const clientResultLabelEl = document.querySelector(
+  '.js-client-result',
+) as HTMLSpanElement;
+const stockResultLabelEl = document.querySelector(
+  '.js-stock-result',
+) as HTMLSpanElement;
+
+const setPhoneResult = (tab: Tab) => {
+  switch (tab) {
+    case Tab.CLIENT:
+      phoneResultLabelEl.textContent = clientResult.toLocaleString();
+      break;
+
+    case Tab.STOCK:
+      phoneResultLabelEl.textContent = stockResult.toLocaleString();
+      break;
+
+    default:
+      phoneResultLabelEl.textContent = '1';
+  }
+};
 const calcResult = () => {
-  result = (Number(rentRange.value) * 4500 + Number(trainingRange.value) * 10500)
-    * Number(roomRange.value);
-  resultLabelEl.textContent = result.toLocaleString();
-  return result;
+  b2gRangeResult = Number(b2gRange.value) * 1000;
+  b2gRangeResultLabelEl.textContent = b2gRangeResult.toLocaleString();
+
+  b2cRangeResult = Number(b2cRange.value) * 1000;
+  b2cRangeResultLabelEl.textContent = b2cRangeResult.toLocaleString();
+
+  b2bRangeResult = Number(b2bRange.value) * 1000;
+  b2bRangeResultLabelEl.textContent = b2bRangeResult.toLocaleString();
+
+  clothesRangeResult = Number(clothesRange.value) * 1000;
+  clothesRangeResultLabelEl.textContent = clothesRangeResult.toLocaleString();
+
+  shoesRangeResult = Number(shoesRange.value) * 1000;
+  shoesRangeResultLabelEl.textContent = shoesRangeResult.toLocaleString();
+
+  protectRangeResult = Number(protectRange.value) * 1000;
+  protectRangeResultLabelEl.textContent = protectRangeResult.toLocaleString();
+
+  clientResult = b2gRangeResult + b2cRangeResult + b2bRangeResult;
+  stockResult = shoesRangeResult + clothesRangeResult + protectRangeResult;
+
+  clientResultLabelEl.textContent = clientResult.toLocaleString();
+  stockResultLabelEl.textContent = stockResult.toLocaleString();
+
+  setPhoneResult(currentTab);
 };
 
 calcResult();
 
-rangeElList.forEach(el => {
-  const rangeEl = el as HTMLInputElement;
+tabBoxEl.addEventListener('click', e => {
+  const clickedEl = e.target as HTMLDivElement;
+  if (!clickedEl.classList.contains('calc__tab')) {
+    return;
+  }
 
-  const steps = (Number(rangeEl.max) - Number(rangeEl.min)) / Number(rangeEl.step);
+  if (clickedEl.classList.contains('calc__tab_active')) {
+    return;
+  }
 
-  const currentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
-
-  rangeEl.style.background = `linear-gradient(to right, ${leftColor} 0%, ${leftColor} ${String(
-    (currentStep / steps) * 100,
-  )}%, ${rightColor} ${String(
-    (currentStep / steps) * 100,
-  )}%, ${rightColor} 100%)`;
-});
-
-rentRange.addEventListener('input', e => {
-  const rangeEl = e.currentTarget as HTMLInputElement;
-
-  const steps = (Number(rangeEl.max) - Number(rangeEl.min)) / Number(rangeEl.step);
-
-  personCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
-
-  rangeEl.style.background = `linear-gradient(to right, ${leftColor} 0%, ${leftColor} ${String(
-    (personCurrentStep / steps) * 100,
-  )}%, ${rightColor} ${String(
-    (personCurrentStep / steps) * 100,
-  )}%, ${rightColor} 100%)`;
+  if (clickedEl.classList.contains('js-client-tab')) {
+    clientTabEl?.classList.add('calc__tab_active');
+    stockTabEl?.classList.remove('calc__tab_active');
+    clientBoxEl.classList.remove('visually-hidden');
+    stockBoxEl.classList.add('visually-hidden');
+    currentTab = Tab.CLIENT;
+  } else {
+    stockTabEl?.classList.add('calc__tab_active');
+    clientTabEl?.classList.remove('calc__tab_active');
+    clientBoxEl.classList.add('visually-hidden');
+    stockBoxEl.classList.remove('visually-hidden');
+    currentTab = Tab.STOCK;
+  }
 
   calcResult();
 });
 
-trainingRange.addEventListener('input', e => {
-  const rangeEl = e.currentTarget as HTMLInputElement;
-
-  const steps = (Number(rangeEl.max) - Number(rangeEl.min)) / Number(rangeEl.step);
-
-  adultsCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
-
-  rangeEl.style.background = `linear-gradient(to right, ${leftColor} 0%, ${leftColor} ${String(
-    (adultsCurrentStep / steps) * 100,
-  )}%, ${rightColor} ${String(
-    (adultsCurrentStep / steps) * 100,
-  )}%, ${rightColor} 100%)`;
-
-  calcResult();
-});
-
-roomRange.addEventListener('input', e => {
-  const rangeEl = e.currentTarget as HTMLInputElement;
-
-  const steps = (Number(rangeEl.max) - Number(rangeEl.min)) / Number(rangeEl.step);
-
-  kidsCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
-
-  rangeEl.style.background = `linear-gradient(to right, ${leftColor} 0%, ${leftColor} ${String(
-    (kidsCurrentStep / steps) * 100,
-  )}%, ${rightColor} ${String(
-    (kidsCurrentStep / steps) * 100,
-  )}%, ${rightColor} 100%)`;
-
-  calcResult();
+rangeElList.forEach(input => {
+  input.addEventListener('input', () => {
+    calcResult();
+  });
 });
