@@ -1,0 +1,236 @@
+.grow {
+  padding-top: 80px;
+  padding-bottom: 100px;
+
+  @media (max-width: 1150px) {
+    background-image: url('/src/img/bgs/grow-bg.svg');
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+
+  @media (max-width: 1150px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.grow__title {
+  margin-bottom: 40px;
+
+  @include mobile-mb;
+}
+
+.grow__content {
+  max-width: 694px;
+  margin-left: auto;
+  position: relative;
+
+  @media (max-width: 1150px) {
+    margin-left: initial;
+  }
+
+  &::after {
+    position: absolute;
+    left: -837px;
+    top: -194px;
+    z-index: -1;
+    content: url('/src/img/grow-img-full.jpg');
+
+    @media (max-width: 1150px) {
+      position: relative;
+      display: block;
+      content: '';
+      @include max-width(580px);
+      aspect-ratio: 580/387;
+      @include bg;
+      background-image: url('/src/img/grow-img.png');
+      margin-top: 20px;
+      left: 0;
+      top: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.grow__text-box {
+  margin-bottom: 50px;
+
+  @include tablet-mb;
+  @include mobile-mb;
+
+  & > * + * {
+    margin-top: 20px;
+  }
+}
+
+.grow__text {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+.grow__note {
+  padding: 30px;
+  background: #003082;
+  background-image: url('/src/img/icons/grow-icon.svg');
+  background-position: right 30px bottom 37px;
+  background-repeat: no-repeat;
+  color: #a1d9ff;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-weight: bold;
+  line-height: 1.7;
+
+  @media (max-width: 650px) {
+    background-position: right 5px bottom 5px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  span {
+    color: white;
+    font-size: 24px;
+
+    @media (max-width: 650px) {
+      font-size: 20px !important;
+    }
+  }
+}
+
+.grow-text {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #a1d9ff;
+}
+
+.grow-text__text {
+  font-size: 18px;
+  max-width: 749px;
+  margin-bottom: 0;
+
+  @media (max-width: 1150px) {
+    max-width: 100%;
+  }
+}
+
+.grow-bottom {
+  background: #d2edff;
+  padding-top: 98px;
+  padding-bottom: 92px;
+
+  @media (max-width: 1150px) {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.grow-bottom__text {
+  max-width: 694px;
+  font-size: 18px;
+  margin-bottom: 89px;
+  position: relative;
+  margin-left: auto;
+
+  @media (max-width: 1150px) {
+    margin-left: initial;
+    max-width: 100%;
+  }
+
+  &::before {
+    width: 299px;
+    aspect-ratio: 299/258;
+    @include bg;
+    background-image: url('/src/img/grow-flag.png');
+    position: absolute;
+    top: -311px;
+    right: 70px;
+    content: '';
+
+    @media (max-width: 1150px) {
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      top: 0;
+      right: 0;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 650px) {
+      zoom: 0.7;
+    }
+  }
+
+  &::after {
+    width: 536px;
+    aspect-ratio: 536/311;
+    position: absolute;
+    @include bg;
+    background-image: url('/src/img/grow-img-bottom.png');
+    left: -588px;
+    top: -53px;
+    content: '';
+
+    @media (max-width: 1150px) {
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      @include max-width(536px);
+      left: 0;
+      top: 0;
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 1150px) {
+    margin-bottom: 50px;
+  }
+
+  @include tablet-mb;
+  @include mobile-mb;
+}
+
+.grow-bottom__note {
+  border: 1px solid #3498db;
+  padding: 30px;
+  padding-right: 28px;
+  max-width: 863px;
+  position: relative;
+  left: 169px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0;
+
+  @media (max-width: 1150px) {
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 650px) {
+    padding: 15px;
+  }
+
+  span {
+    font-size: 24px;
+    color: #0066ff;
+
+    @media (max-width: 650px) {
+      font-size: 20px !important;
+    }
+  }
+}
