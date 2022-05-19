@@ -4,6 +4,8 @@
   @include bg;
   background-color: #003082;
   background-image: url('/src/img/bgs/calc-bg.jpg');
+  position: relative;
+  z-index: 3;
 
   @media (max-width: 1150px) {
     padding-top: 50px;

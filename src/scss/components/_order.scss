@@ -1,0 +1,101 @@
+.order {
+  padding-top: 50px;
+  padding-bottom: 80px;
+  @include bg;
+  background-color: #e9f0f8;
+  background-image: url('/src/img/bgs/order-bg.jpg');
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  @media (max-width: 1150px) {
+    background-image: none;
+    padding-bottom: 20px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+  }
+}
+
+.order__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  @media (max-width: 1150px) {
+    justify-content: center;
+  }
+}
+
+.order__text-box {
+  @include max-width(625px);
+  padding-left: 108px;
+  padding-top: 30px;
+  position: relative;
+
+  @media (max-width: 650px) {
+    padding-left: 0;
+    padding-top: 0;
+  }
+
+  &::before {
+    content: '';
+    width: 78px;
+    aspect-ratio: 78/139;
+    @include bg;
+    background-image: url('/src/img/icons/arrow-right-big.svg');
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    @media (max-width: 650px) {
+      content: none;
+    }
+  }
+}
+
+.order__title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 40px;
+
+  @include mobile-mb;
+
+  span {
+    color: #003082;
+    text-transform: uppercase;
+  }
+}
+
+.order__text {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.order__right-side {
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 714px;
+    aspect-ratio: 714/537;
+    position: absolute;
+    @include bg;
+    background-image: url('/src/img/order-van.png');
+    top: 151px;
+    left: -648px;
+    z-index: -1;
+
+    @media (max-width: 1150px) {
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      @include max-width(714px);
+      top: 0;
+      left: 0;
+    }
+  }
+}
