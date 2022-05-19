@@ -1,0 +1,144 @@
+.direct {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @media (max-width: 1150px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.direct__title {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  text-align: center;
+
+  @include mobile-mb;
+}
+
+.direct__text {
+  max-width: 565px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+
+  @include tablet-mb;
+  @include mobile-mb;
+}
+
+.direct__list {
+  @include reset-list;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.direct__item {
+  @include max-width(368px);
+  min-height: 550px;
+  padding-bottom: 20px;
+  background: #eef8ff;
+
+  @media (max-width: 650px) {
+    min-height: auto;
+  }
+}
+
+.direct__item-img {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.direct__title-box {
+  padding-left: 21px;
+  padding-right: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.direct__item-number {
+  font-size: 48px;
+  color: #0066ff;
+  margin-bottom: 0;
+
+  @media (max-width: 650px) {
+    font-size: 30px !important;
+  }
+}
+
+.direct__item-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.direct__item-text {
+  padding-left: 29px;
+  padding-right: 29px;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.direct__note-box {
+  padding: 30px;
+  background: #3498db;
+  position: relative;
+
+  @media (max-width: 1150px) {
+    @include max-width(580px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 359px;
+    aspect-ratio: 359/237;
+    @include bg;
+    background-image: url('/src/img/icons/direct/4.png');
+    @media (max-width: 1150px) {
+      display: block;
+      position: relative;
+      bottom: initial;
+      right: initial;
+      margin-left: auto;
+      margin-right: auto;
+      @include max-width(359px);
+      margin-bottom: -10px;
+    }
+  }
+}
+
+.direct__note-title {
+  margin-bottom: 10px;
+  color: white;
+  font-size: 27px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.direct__note-text {
+  color: #a1d9ff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  max-width: 665px;
+}

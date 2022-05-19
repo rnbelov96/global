@@ -1,0 +1,93 @@
+.market {
+  padding-top: 80px;
+  padding-bottom: 95px;
+  @include bg;
+  background-color: #003082;
+  background-image: url('/src/img/bgs/market-bg.jpg');
+  position: relative;
+  z-index: 2;
+
+  @media (max-width: 1150px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: none;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.market__title {
+  margin-bottom: 40px;
+
+  @include mobile-mb;
+}
+
+.market__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  @media (max-width: 1150px) {
+    justify-content: center;
+  }
+}
+
+.market__left-side {
+  @include max-width(649px);
+}
+
+.market__text {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 30px;
+
+  @include mobile-mb;
+}
+
+.market__list-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 33px;
+  color: white;
+
+  @include mobile-mb;
+}
+
+.market__list {
+  @include reset-list;
+
+  & > * + * {
+    margin-top: 18px;
+  }
+}
+
+.market__item {
+  position: relative;
+  padding-left: 80px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+
+  &::before {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    @include y-align;
+    content: '';
+    @include bg;
+  }
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i})::before {
+      background-image: url('/src/img/icons/market/#{$i}.svg');
+    }
+  }
+}
