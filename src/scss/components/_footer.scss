@@ -1,0 +1,177 @@
+.footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #8ed2ff;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+
+  @media (max-width: 780px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 650px) {
+    gap: 20px;
+  }
+}
+
+.footer__copyright {
+  font-size: 12px;
+  margin-bottom: 22px;
+
+  @media (max-width: 650px) {
+    font-size: 12px !important;
+    margin-bottom: 14px;
+  }
+}
+
+.footer__data {
+  font-size: 12px;
+  margin-bottom: 16px;
+
+  @media (max-width: 650px) {
+    font-size: 12px !important;
+  }
+}
+
+.footer__address {
+  padding-left: 45px;
+  position: relative;
+  margin-bottom: 0;
+  font-size: 12px;
+
+  &::before {
+    content: url('/src/img/icons/gerb.png');
+    zoom: 0.5;
+    left: 0;
+    @include y-align;
+    position: absolute;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 12px !important;
+  }
+}
+
+.footer__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.footer__logo {
+  @media (max-width: 650px) {
+    width: 130px;
+    height: auto;
+  }
+}
+
+.footer__link-list {
+  display: flex;
+  gap: 32px;
+}
+
+.footer__link {
+  @include bg;
+
+  &:nth-child(1) {
+    width: 30px;
+    height: 19px;
+    background-image: url('/src/img/icons/vk.svg');
+  }
+  &:nth-child(2) {
+    width: 32px;
+    height: 23px;
+    background-image: url('/src/img/icons/youtube.svg');
+  }
+}
+
+.footer__right-side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  @media (max-width: 780px) {
+    align-items: center;
+  }
+}
+
+.footer__contact-box {
+  display: flex;
+  align-items: center;
+  padding-left: 26px;
+  position: relative;
+  flex-direction: column;
+  flex-shrink: 0;
+
+  @media (max-width: 650px) {
+    padding-left: 20px;
+  }
+
+  &:hover::before {
+    transform: rotate(15deg);
+  }
+
+  &::before {
+    content: url('/src/img/icons/phone-blue.svg');
+    position: absolute;
+    left: 0;
+    top: 12px;
+    transition: 0.5s;
+
+    @media (max-width: 650px) {
+      top: 8px;
+    }
+  }
+}
+
+.footer__phone {
+  @include reset-link(black);
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+
+  @media (max-width: 650px) {
+    font-size: 14px;
+  }
+}
+
+.footer__callback {
+  @include reset-btn;
+  color: black;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.footer__policy {
+  @include reset-btn;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.footer__f5 {
+  padding-left: 39px;
+  font-size: 12px;
+  @include reset-link(black);
+  color: black;
+  position: relative;
+
+  &::before {
+    width: 29px;
+    height: 27px;
+    @include bg;
+    background-image: url('/src/img/icons/f5.svg');
+    position: absolute;
+    left: 0;
+    @include y-align;
+    content: '';
+  }
+}
