@@ -7,6 +7,38 @@
   @media (max-width: 650px) {
     padding: 15px;
   }
+
+  &_modal {
+    margin-left: 370px;
+    position: relative;
+    width: 98%;
+
+    @media (max-width: 800px) {
+      margin-left: 0;
+
+      &::before {
+        content: none;
+      }
+    }
+
+    &::before {
+      height: 100%;
+      aspect-ratio: 380/528;
+      content: '';
+      position: absolute;
+      transform: translateX(-100%);
+      left: 0;
+      top: 0;
+      @include bg;
+      background-image: url('/src/img/modal-owner.jpg');
+
+      @media (max-width: 800px) {
+        & {
+          content: none;
+        }
+      }
+    }
+  }
 }
 
 .modal-form__title {

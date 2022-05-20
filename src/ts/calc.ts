@@ -82,22 +82,22 @@ const setPhoneResult = (tab: Tab) => {
   }
 };
 const calcResult = () => {
-  b2gRangeResult = Number(b2gRange.value) * 1000;
+  b2gRangeResult = Number(b2gRange.value) * 10000 * 0.16;
   b2gRangeResultLabelEl.textContent = b2gRangeResult.toLocaleString();
 
-  b2cRangeResult = Number(b2cRange.value) * 1000;
+  b2cRangeResult = Number(b2cRange.value) * 10000 * 0.16;
   b2cRangeResultLabelEl.textContent = b2cRangeResult.toLocaleString();
 
-  b2bRangeResult = Number(b2bRange.value) * 1000;
+  b2bRangeResult = Number(b2bRange.value) * 10000 * 0.16;
   b2bRangeResultLabelEl.textContent = b2bRangeResult.toLocaleString();
 
-  clothesRangeResult = Number(clothesRange.value) * 1000;
+  clothesRangeResult = Number(clothesRange.value) * 4000 * 0.16;
   clothesRangeResultLabelEl.textContent = clothesRangeResult.toLocaleString();
 
-  shoesRangeResult = Number(shoesRange.value) * 1000;
+  shoesRangeResult = Number(shoesRange.value) * 4000 * 0.16;
   shoesRangeResultLabelEl.textContent = shoesRangeResult.toLocaleString();
 
-  protectRangeResult = Number(protectRange.value) * 1000;
+  protectRangeResult = Number(protectRange.value) * 4000 * 0.16;
   protectRangeResultLabelEl.textContent = protectRangeResult.toLocaleString();
 
   clientResult = b2gRangeResult + b2cRangeResult + b2bRangeResult;
