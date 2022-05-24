@@ -20,3 +20,19 @@ const swiper = new Swiper('.stock__slider', {
     },
   },
 });
+
+const descSwiper = new Swiper('.desc__slider', {
+  slidesPerView: 1,
+  spaceBetween: 25,
+  enabled: true,
+  pagination: {
+    el: '.desc__slider-pagination',
+  },
+  breakpoints: {
+    650: {
+      slidesPerView: 3,
+      enabled: false,
+      spaceBetween: 0,
+    },
+  },
+});
